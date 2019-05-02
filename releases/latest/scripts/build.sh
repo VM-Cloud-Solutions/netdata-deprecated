@@ -6,10 +6,19 @@ DEBIAN_FRONTEND=noninteractive
 
 echo "deb http://ftp.nl.debian.org/debian/ stretch main" > /etc/apt/sources.list
 echo "deb http://security.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
+echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" > /etc/apt/sources.list
+echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 
 # install dependencies for build
 
 apt-get -qq update
+#Install openvpn
+apt-get -y install openvpn
+cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
+#install webmin
+wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
+apt-get install webmin -y
+#Install Netdata
 apt-get -y install zlib1g-dev uuid-dev libmnl-dev gcc make curl git autoconf autogen automake pkg-config netcat-openbsd jq
 apt-get -y install autoconf-archive lm-sensors nodejs python python-mysqldb python-yaml
 apt-get -y install msmtp msmtp-mta apcupsd fping
