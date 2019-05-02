@@ -34,7 +34,7 @@ Use the sample [docker-compose.yml](docker-compose.yml) file.
 > **Note:** Remove the `restart: unless-stopped` [option](https://docs.docker.com/compose/compose-file/#restart) if you don't need the netdata container to start automatically on boot.
 
 ```
-mkdir netdata && cd netdata && wget https://raw.githubusercontent.com/titpetric/netdata/master/docker-compose.yml
+mkdir netdata && cd netdata && wget https://raw.githubusercontent.com/weblivevideo/netdata/master/docker-compose.yml
 docker-compose up -d
 ```
 
