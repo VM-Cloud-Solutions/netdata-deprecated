@@ -12,7 +12,7 @@ https://weblivevideo.servehttp.com
 
 # Using
 
-## Statring the container
+## Statring the container,
 
 ### Docker CLI
 
